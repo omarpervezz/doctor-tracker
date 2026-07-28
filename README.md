@@ -8,7 +8,7 @@ Built with **Next.js**, **TypeScript**, **MongoDB**, and **Tailwind CSS**.
 
 ## Live Demo
 
-**Application:** _(Will be added after deployment)_
+**Application:** https://doctor-tracker-blond.vercel.app/
 
 Demo credentials are intentionally not included in this public repository. They will be shared privately with the recruiter for evaluation.
 
