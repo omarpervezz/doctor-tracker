@@ -1,0 +1,102 @@
+@import "tailwindcss";
+:root {
+  --bg: #f6f8fb;
+  --surface: #fff;
+  --ink: #172033;
+  --muted: #697386;
+  --primary: #2563eb;
+  --border: #e5e9f2;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(25, 45, 80, 0.05);
+}
+.input {
+  width: 100%;
+  border: 1px solid #dbe1ea;
+  background: white;
+  border-radius: 11px;
+  padding: 0.72rem 0.82rem;
+  outline: none;
+}
+.input:focus {
+  border-color: #5b8def;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+.btn {
+  border: 0;
+  border-radius: 11px;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+.btn-secondary {
+  background: #eef3ff;
+  color: #244b9b;
+}
+.btn-danger {
+  background: #fff0f0;
+  color: #b42318;
+}
+.table-wrap {
+  overflow: auto;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.data-table th {
+  color: #697386;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #fafbfe;
+}
+.badge {
+  display: inline-flex;
+  padding: 0.28rem 0.56rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.skeleton {
+  background: linear-gradient(90deg, #eef1f6, #f8f9fb, #eef1f6);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

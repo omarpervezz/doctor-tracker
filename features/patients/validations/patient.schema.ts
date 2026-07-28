@@ -1,0 +1,3 @@
+import { z } from "zod";
+const fields={doctorId:z.string().regex(/^[a-f\d]{24}$/i,"Select a valid doctor"),name:z.string().trim().min(2).max(100),age:z.coerce.number().int().min(0).max(130),gender:z.enum(["male","female","other"]),condition:z.string().trim().min(2).max(160),status:z.enum(["active","monitoring","recovered","critical"]),phone:z.string().trim().min(7).max(30),email:z.string().trim().email().toLowerCase(),lastVisit:z.string().refine(v=>!Number.isNaN(Date.parse(v)),"Invalid visit date")};
+export const createPatientSchema=z.object(fields);export const updatePatientSchema=z.object(fields).partial().refine(v=>Object.keys(v).length>0,"At least one field is required");

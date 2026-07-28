@@ -1,0 +1,1 @@
+import { apiOk } from "@/lib/api";import { SESSION_COOKIE } from "@/lib/auth";export async function POST(){const r=apiOk({loggedOut:true});r.cookies.set(SESSION_COOKIE,"",{httpOnly:true,path:"/",expires:new Date(0)});return r;}

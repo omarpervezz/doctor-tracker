@@ -1,0 +1,2 @@
+import { NextRequest } from "next/server";import { apiError,apiOk } from "@/lib/api";import { SESSION_COOKIE } from "@/lib/auth";import { login } from "@/features/auth/services/auth.service";
+export async function POST(req:NextRequest){const result=await login(await req.json().catch(()=>({})));if(!result.success)return apiError(result.error,401);const res=apiOk(result.data.user);res.cookies.set(SESSION_COOKIE,result.data.token,{httpOnly:true,sameSite:"lax",secure:process.env.NODE_ENV==="production",path:"/",maxAge:60*60*8});return res;}
