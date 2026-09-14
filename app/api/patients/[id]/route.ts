@@ -1,0 +1,4 @@
+import { NextRequest } from "next/server";import { apiError,apiOk } from "@/lib/api";import { getPatient,removePatient,updatePatient } from "@/features/patients/services/patient.service";
+export async function GET(_:NextRequest,{params}:{params:Promise<{id:string}>}){const{id}=await params;const r=await getPatient(id);return r.success?apiOk(r.data):apiError(r.error,404,r.code);}
+export async function PATCH(req:NextRequest,{params}:{params:Promise<{id:string}>}){const{id}=await params;const r=await updatePatient(id,await req.json().catch(()=>({})));return r.success?apiOk(r.data):apiError(r.error,r.code==="NOT_FOUND"?404:400,r.code);}
+export async function DELETE(_:NextRequest,{params}:{params:Promise<{id:string}>}){const{id}=await params;const r=await removePatient(id);return r.success?apiOk({deleted:true}):apiError(r.error,404,r.code);}

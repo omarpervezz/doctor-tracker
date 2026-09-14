@@ -1,0 +1,2 @@
+import type { PatientDto } from "../types/patient.dto";import type { PatientModel } from "../types/patient.model";
+export function toPatientDto(p:PatientModel,doctorName="Unknown doctor"):PatientDto{return{id:p._id.toString(),doctorId:p.doctorId.toString(),doctorName,name:p.name,age:p.age,gender:p.gender,condition:p.condition,status:p.status,phone:p.phone,email:p.email,lastVisit:p.lastVisit.toISOString(),createdAt:p.createdAt.toISOString(),updatedAt:p.updatedAt.toISOString()};}

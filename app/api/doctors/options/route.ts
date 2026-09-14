@@ -1,0 +1,1 @@
+import { apiOk } from "@/lib/api";import { getDoctorOptions } from "@/features/doctors/services/doctor.service";export async function GET(){const r=await getDoctorOptions();return apiOk(r.success?r.data:[]);}

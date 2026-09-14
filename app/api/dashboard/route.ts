@@ -1,0 +1,1 @@
+import { apiOk } from "@/lib/api";import { getDashboardAnalytics } from "@/features/dashboard/services/dashboard.service";export async function GET(){const r=await getDashboardAnalytics();return apiOk(r.success?r.data:{});}
